@@ -21,7 +21,11 @@ if __name__ == '__main__':
     root = tk.Tk()
     root.withdraw()
 
+    videourl = input('Enter the youtube video url: ')
     save_path = open_file_dialog()
-
-
-    download_video('https://www.youtube.com/watch?v=9bZkp7q19f0', 'C:/Users/HP/Downloads')
+    if  save_path:
+        print('Downloading video...')
+        download_video(videourl, save_path)
+    else:
+        
+        print('Invalid path selected. ')
